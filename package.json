@@ -1,11 +1,14 @@
 {
+  "homepage": "https://raviantil.github.io/Moje_React",
   "name": "moje",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "export": "next build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d out"
   },
   "dependencies": {
     "autoprefixer": "^10.4.14",
