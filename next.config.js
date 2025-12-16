@@ -3,7 +3,9 @@ const nextConfig = {
   output: "export",
   basePath: "/Moje_React",
   assetPrefix: "/Moje_React/",
-  trailingSlash: true,
+  images: {
+    unoptimized: true,
+  },
 };
 
 module.exports = nextConfig;
