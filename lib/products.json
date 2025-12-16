@@ -1,0 +1,47 @@
+[
+  {
+    "code": "MOJE123",
+    "name": "Cozy Wool",
+    "category": "winter",
+    "path": "/category/winter",
+    "price": "₹349",
+    "description": "Soft wool socks for cold days.",
+    "image": "/socks1.jpg"
+  },
+  {
+    "code": "MOJE124",
+    "name": "Fuzzy Comfort",
+    "category": "winter",
+    "path": "/category/winter",
+    "price": "₹399",
+    "description": "Fuzzy lining with heel support.",
+    "image": "/socks2.jpg"
+  },
+  {
+    "code": "MOJE456",
+    "name": "Runner Grip",
+    "category": "sporty",
+    "path": "/category/sporty",
+    "price": "₹299",
+    "description": "Sweat-wicking socks for running.",
+    "image": "/socks3.jpg"
+  },
+  {
+    "code": "MOJE789",
+    "name": "Ultra Plush",
+    "category": "comfort",
+    "path": "/category/comfort",
+    "price": "₹449",
+    "description": "Thick padded socks for ultimate comfort.",
+    "image": "/socks4.jpg"
+  },
+  {
+    "code": "MOJE790",
+    "name": "Everyday Ease",
+    "category": "comfort",
+    "path": "/category/comfort",
+    "price": "₹299",
+    "description": "Lightweight and soft for daily wear.",
+    "image": "/socks5.jpg"
+  }
+]
