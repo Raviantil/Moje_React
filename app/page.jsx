@@ -11,6 +11,9 @@ const categories = [
   { name: "Comfort", image: "/category-comfort.jpg" }
 ];
 
+const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+const withBase = (p) => `${base}${p}`;
+
 // Initialize Fuse.js for fuzzy searching products
 const fuse = new Fuse(productList, {
   keys: ["name", "category", "code"],
@@ -98,7 +101,7 @@ export default function HomePage() {
       {/* ===== Banner Section ===== */}
       <div className="h-[60vh] relative overflow-hidden">
         <img
-          src={bannerImages[currentBanner]}
+          src={withBase(bannerImages[currentBanner])}
           className="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
           alt="banner"
         />
@@ -118,7 +121,7 @@ export default function HomePage() {
               className="cursor-pointer group overflow-hidden rounded-xl shadow-lg"
             >
               <img
-                src={cat.image}
+                src={withBase(cat.image)}
                 className="w-full h-64 object-cover group-hover:scale-105 transition"
                 alt={cat.name}
               />

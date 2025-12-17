@@ -7,6 +7,8 @@ export default function Header() {
   const [darkMode, setDarkMode] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   useEffect(() => {
     const stored = localStorage.getItem("darkMode");
     if (stored !== null) {
@@ -43,12 +45,12 @@ export default function Header() {
           <Link href="/">
             <div className="relative w-74 h-auto">
               <img
-                src="/logo.jpg"
+                src={`${base}/logo.jpg`}
                 alt="Moje Logo Light"
                 className="block dark:hidden w-36 md:w-44 h-auto object-contain"
               />
               <img
-                src="/logo3.jpg"
+                src={`${base}/logo3.jpg`}
                 alt="Moje Logo Dark"
                 className="hidden dark:block w-36 md:w-44 h-auto object-contain"
               />

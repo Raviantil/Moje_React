@@ -16,7 +16,7 @@ export default function AboutPage() {
 
         <div className="grid md:grid-cols-2 gap-10 items-center">
           <Image
-            src="/about_page_image.jpg"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ''}/about_page_image.jpg`}
             alt="About Moje"
             width={500}
             height={400}

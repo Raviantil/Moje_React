@@ -7,6 +7,9 @@ export default function CategoryClient({ name, products }) {
   const searchParams = useSearchParams();
   const highlightCode = searchParams.get("highlight");
 
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+  const withBase = (p) => `${base}${p}`;
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const productRefs = useRef([]);
 
@@ -34,7 +37,7 @@ export default function CategoryClient({ name, products }) {
             className={`cursor-pointer rounded-xl shadow-xl hover:scale-105 transition
               ${highlightCode === product.code ? "ring-4 ring-red-600" : ""}`}
           >
-            <img src={product.image} className="w-full h-64 object-cover" />
+            <img src={withBase(product.image)} className="w-full h-64 object-cover" />
           </div>
         ))}
       </div>
@@ -45,7 +48,7 @@ export default function CategoryClient({ name, products }) {
           onClick={() => setSelectedProduct(null)}
         >
           <div className="bg-black p-6 rounded-xl">
-            <img src={selectedProduct.image} className="h-80 object-cover" />
+            <img src={withBase(selectedProduct.image)} className="h-80 object-cover" />
             <h2 className="text-xl mt-4">{selectedProduct.name}</h2>
             <p>{selectedProduct.price}</p>
           </div>

@@ -3,6 +3,8 @@
 import { FaInstagram, FaXTwitter, FaPhone } from "react-icons/fa6";
 
 export default function Footer() {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <footer className="bg-[#E9E0E0] dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-6 mt-15">
       <div className="max-w-7xl mx-auto relative">
@@ -11,12 +13,12 @@ export default function Footer() {
           {/* Logo on bottom-left */}
           <div className="mb-2 md:mb-0">
           <img
-            src="/logo.jpg"
+            src={`${base}/logo.jpg`}
             alt="Moje Logo"
             className="w-40 h-auto dark:hidden"
           />
           <img
-            src="/logo3.jpg"
+            src={`${base}/logo3.jpg`}
             alt="Moje Logo Dark"
             className="w-40 h-auto hidden dark:block"
           />
@@ -49,12 +51,12 @@ export default function Footer() {
         {/* Mobile layout (unchanged) */}
         <div className="flex md:hidden flex-col items-center space-y-4">
           <img
-            src="/logo.jpg"
+            src={`${base}/logo.jpg`}
             alt="Moje Logo"
             className="w-24 h-auto dark:hidden"
           />
           <img
-            src="/logo3.jpg"
+            src={`${base}/logo3.jpg`}
             alt="Moje Logo Dark"
             className="w-24 h-auto hidden dark:block"
           />
