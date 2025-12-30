@@ -6,9 +6,9 @@ import productList from "../lib/products.json"; // ✅ Make sure this file exist
 
 const bannerImages = ["/banner1.jpg", "/banner2.jpg", "/banner3.jpg"];
 const categories = [
-  { name: "Winter", image: "/category-winter.jpg" },
-  { name: "Sporty", image: "/category-sporty.jpg" },
-  { name: "Comfort", image: "/category-comfort.jpg" }
+  { name: "Bamboo", image: "/category-bamboo_collection.jpeg" },
+  { name: "Cotton", image: "/category-cotton_collection.jpeg" }
+  //{ name: "Comfort", image: "/category-comfort.jpg" }
 ];
 
 const base = process.env.NEXT_PUBLIC_BASE_PATH || "";

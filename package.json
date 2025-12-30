@@ -1,12 +1,12 @@
 {
-  "homepage": "https://raviantil.github.io/Moje_React",
+  "homepage": "https://www.moje.in",
   "name": "moje",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "predeploy": "npm run build && node -e \"require('fs').writeFileSync('out/.nojekyll','')\"",
+    "predeploy": "npm run build && node scripts/createNoJekyll.js && node scripts/copyNext.js && node scripts/fixPaths.js",
     "deploy": "gh-pages -d out"
   },
   "dependencies": {

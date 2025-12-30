@@ -34,23 +34,88 @@ export default function CategoryClient({ name, products }) {
             key={i}
             ref={el => (productRefs.current[i] = el)}
             onClick={() => setSelectedProduct(product)}
-            className={`cursor-pointer rounded-xl shadow-xl hover:scale-105 transition
+            role="button"
+            tabIndex={0}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") setSelectedProduct(product);
+            }}
+            className={`group relative cursor-pointer rounded-xl overflow-hidden shadow-xl transition-transform duration-200
               ${highlightCode === product.code ? "ring-4 ring-red-600" : ""}`}
           >
-            <img src={withBase(product.image)} className="w-full h-64 object-cover" />
+            <img
+              src={withBase(product.image)}
+              alt={product.name}
+              className="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-200"
+            />
+
+            {/* Hover overlay showing name, price and description */}
+            <div className="absolute inset-0 bg-black/40 flex flex-col justify-end p-4 opacity-0 group-hover:opacity-100 focus-within:opacity-100 transition-opacity duration-200 text-white">
+              <div className="text-sm font-semibold">{product.name}</div>
+              <div className="text-lg font-bold">{product.price}</div>
+              <div className="text-xs truncate">{product.description}</div>
+            </div>
           </div>
         ))}
       </div>
 
       {selectedProduct && (
         <div
-          className="fixed inset-0 bg-black/70 flex items-center justify-center"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-sm"
           onClick={() => setSelectedProduct(null)}
         >
-          <div className="bg-black p-6 rounded-xl">
-            <img src={withBase(selectedProduct.image)} className="h-80 object-cover" />
-            <h2 className="text-xl mt-4">{selectedProduct.name}</h2>
-            <p>{selectedProduct.price}</p>
+          <div
+            className="relative bg-white/10 backdrop-blur-xl text-white rounded-xl overflow-hidden max-w-3xl w-full shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={() => setSelectedProduct(null)}
+              className="absolute top-4 right-4 text-white bg-black/60 hover:bg-black/80 p-2 rounded-full z-10"
+            >
+              ✕
+            </button>
+
+            <img
+              src={selectedProduct.image}
+              alt={selectedProduct.name}
+              className="w-full h-[28rem] object-cover"
+            />
+
+            <div className="p-6 bg-gradient-to-t from-black/70 to-transparent">
+              <h2 className="text-2xl font-bold mb-1">
+                {selectedProduct.name}
+              </h2>
+              <p className="text-lg font-semibold">
+                {selectedProduct.price}
+              </p>
+              <p className="text-sm text-gray-200 mt-2">
+                {selectedProduct.description}
+              </p>
+
+              {/* BUY BUTTONS */}
+              <div className="flex gap-4 mt-4">
+                {selectedProduct.amazonLink && (
+                  <a
+                    href={selectedProduct.amazonLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-yellow-400 text-black px-5 py-2 rounded-lg font-semibold hover:bg-yellow-500"
+                  >
+                    Buy on Amazon
+                  </a>
+                )}
+
+                {selectedProduct.flipkartLink && (
+                  <a
+                    href={selectedProduct.flipkartLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-blue-600 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-700"
+                  >
+                    Buy on Flipkart
+                  </a>
+                )}
+              </div>
+            </div>
           </div>
         </div>
       )}
