@@ -3,8 +3,6 @@
 import { FaInstagram, FaXTwitter, FaPhone } from "react-icons/fa6";
 
 export default function Footer() {
-  const base = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
   return (
     <footer className="bg-[#E9E0E0] dark:bg-gray-900 text-gray-900 dark:text-white px-6 py-6 mt-15">
       <div className="max-w-7xl mx-auto relative">
@@ -13,12 +11,12 @@ export default function Footer() {
           {/* Logo on bottom-left */}
           <div className="mb-2 md:mb-0">
           <img
-            src={`${base}/logo.jpg`}
+            src="/logo.jpg"
             alt="Moje Logo"
             className="w-40 h-auto dark:hidden"
           />
           <img
-            src={`${base}/logo3.jpg`}
+            src="/logo3.jpg"
             alt="Moje Logo Dark"
             className="w-40 h-auto hidden dark:block"
           />
@@ -30,7 +28,7 @@ export default function Footer() {
               <FaPhone className="text-2xl hover:text-red-500 transition" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/sales.moje/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -38,7 +36,7 @@ export default function Footer() {
               <FaInstagram className="text-2xl hover:text-red-500 transition" />
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/SalesMoje"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
@@ -51,21 +49,21 @@ export default function Footer() {
         {/* Mobile layout (unchanged) */}
         <div className="flex md:hidden flex-col items-center space-y-4">
           <img
-            src={`${base}/logo.jpg`}
+            src="/logo.jpg"
             alt="Moje Logo"
             className="w-24 h-auto dark:hidden"
           />
           <img
-            src={`${base}/logo3.jpg`}
+            src="/logo3.jpg"
             alt="Moje Logo Dark"
             className="w-24 h-auto hidden dark:block"
           />
           <div className="flex space-x-6">
-            <a href="tel:+919871391709" aria-label="Call">
+            <a href="tel:+917497876966" aria-label="Call">
               <FaPhone className="text-xl hover:text-red-500 transition" />
             </a>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/sales.moje/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -73,7 +71,7 @@ export default function Footer() {
               <FaInstagram className="text-xl hover:text-red-500 transition" />
             </a>
             <a
-              href="https://x.com"
+              href="https://x.com/SalesMoje"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="X (Twitter)"
