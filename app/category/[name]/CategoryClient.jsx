@@ -23,7 +23,7 @@ export default function CategoryClient({ name, products }) {
   }, [highlightCode, products]);
 
   return (
-    <div className="p-10 min-h-screen bg-[#E9E0E0]">
+    <div className="p-10 min-h-screen bg-[#E9E0E0] dark:bg-[#0f1724] transition-colors duration-300">
       <h1 className="text-3xl font-bold text-center capitalize mb-6">
         {name} Socks
       </h1>
